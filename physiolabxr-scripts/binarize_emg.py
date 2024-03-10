@@ -33,8 +33,6 @@ class emg_script(RenaScript):
             # there is a threshold for each channel
             data[i] = [1 * (x >= self.params[f'threshold_{i}']) for x in data[i]]
 
-        print('data', data[0][:20])
-
         # output data is boolean
         self.set_output(stream_name="emg_bin", data=data, timestamp=timestamps)
 

@@ -5,7 +5,7 @@ using LSL;
 
 public class ActionLSLInput : MonoBehaviour
 {
-    !!!!! Name of LSL?!?!?!?
+    // TODO: !!!!! Name of LSL?!?!?!?
     public string StreamType = "EEG";
     private int channelCount = 1;
 
