@@ -19,8 +19,8 @@ class emg_script(RenaScript):
     # 250 Hz?
     def loop(self):
         
-        data = self.inputs.get_data('fake_obci_emg1')
-        timestamps = self.inputs.get_timestamps('fake_obci_emg1')
+        data = self.inputs.get_data('obci_emg')
+        timestamps = self.inputs.get_timestamps('obci_emg')
 
         # number of channels to keep
         nb_channels = self.params['nb_channels']

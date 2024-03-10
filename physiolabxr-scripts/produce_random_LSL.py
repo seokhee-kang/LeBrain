@@ -11,8 +11,8 @@ from pylsl import StreamInfo, StreamOutlet, local_clock
 
 
 def main(argv):
-    srate = 128
-    name = 'fake_obci_emg1'
+    srate = 250
+    name = 'obci_emg'
     print('Stream name is ' + name)
     type = 'EEG'
     n_channels = 8
