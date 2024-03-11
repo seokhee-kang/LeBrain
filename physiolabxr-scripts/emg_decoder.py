@@ -20,6 +20,9 @@ class eeg_decoder(RenaScript):
         self.sequence_length = 2500
         self.num_features = 8
 
+        self.num_classes = 4
+        # 0: no activity    1: katana    2: pistol    3: rifle
+
         self.model = Sequential([
             LSTM(128, return_sequences=True, input_shape=(self.sequence_length, self.num_features)),
             Dropout(0.2),
@@ -28,7 +31,7 @@ class eeg_decoder(RenaScript):
             LSTM(32),
             Dense(32, activation='relu'),
             Dropout(0.2),
-            Dense(1, activation='sigmoid')
+            Dense(self.num_classes, activation='sigmoid')
         ])
         self.model.load_weights("./model/emg_weights.h5")
         print('model loaded!')

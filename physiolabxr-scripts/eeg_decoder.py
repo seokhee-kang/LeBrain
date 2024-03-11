@@ -20,6 +20,8 @@ class eeg_decoder(RenaScript):
         self.sequence_length = 2500
         self.num_features = 8
 
+        # output is float between 0 and 1, we use threshold to classify later (line 65)
+
         self.model = Sequential([
             LSTM(128, return_sequences=True, input_shape=(self.sequence_length, self.num_features)),
             Dropout(0.2),
@@ -60,11 +62,11 @@ class eeg_decoder(RenaScript):
         data = data.reshape(1)
         #print(data)
 
-        if data >= .7:
+        if data >= .7:      # R
             data = [1.0]
-        elif data <= .3:
-            data = [0.0]
-        else:
+        elif data <= .3:    # L
+            data = [0.0] 
+        else:               # no activity
             data = [0.5]
 
         # output data is float
