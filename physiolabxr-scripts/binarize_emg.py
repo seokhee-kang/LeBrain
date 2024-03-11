@@ -23,7 +23,7 @@ class emg_script(RenaScript):
         timestamps = self.inputs.get_timestamps('obci_emg')
 
         # number of channels to keep
-        nb_channels = self.params['nb_channels']
+        nb_channels = self.params.get('nb_channels', 1)
 
         # keep the first nb_channels channels 
         data = data[:nb_channels]
@@ -31,7 +31,7 @@ class emg_script(RenaScript):
         # for each channel, binarize the value: 1 if above the given threshold
         for i in range(nb_channels):
             # there is a threshold for each channel
-            data[i] = [1 * (x >= self.params[f'threshold_{i}']) for x in data[i]]
+            data[i] = [1 * (x >= self.params.get(f'threshold_{i}', 0.5)) for x in data[i]]
 
         # output data is boolean
         self.set_output(stream_name="emg_bin", data=data, timestamp=timestamps)
