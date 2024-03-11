@@ -30,7 +30,7 @@ class eeg_decoder(RenaScript):
             Dropout(0.2),
             Dense(1, activation='sigmoid')
         ])
-        self.model.load_weights("./model/LR_weights.h5")
+        self.model.load_weights("./model/emg_weights.h5")
         print('model loaded!')
 
     # Start will be called once when the run button is hit.
@@ -44,8 +44,8 @@ class eeg_decoder(RenaScript):
     # loop is called <Run Frequency> times per second
     def loop(self):
         
-        data = self.inputs.get_data('unicorn_eeg')
-        timestamps = self.inputs.get_timestamps('unicorn_eeg')
+        data = self.inputs.get_data('obci_emg')
+        timestamps = self.inputs.get_timestamps('obci_emg')
 
         # number of channels to keep
         nb_channels = self.params.get('nb_channels', 8)
@@ -68,7 +68,7 @@ class eeg_decoder(RenaScript):
             data = [0.5]
 
         # output data is float
-        self.set_output(stream_name="eeg_bin", data=data, timestamp=timestamps[-1:])
+        self.set_output(stream_name="emg_bin", data=data, timestamp=timestamps[-1:])
 
         self.inputs.clear_buffer_data()
 
