@@ -7,7 +7,7 @@ namespace LSL4Unity.Samples.SimpleInlet
 { 
     // You probably don't need this namespace. We do it to avoid contaminating the global namespace of your project.
     public class SimpleInletScaleObject : MonoBehaviour
-    {
+    { 
         /*
          * This example shows the minimal code required to get an LSL inlet running
          * without leveraging any of the helper scripts that come with the LSL package.
@@ -17,7 +17,7 @@ namespace LSL4Unity.Samples.SimpleInlet
          */
 
         // We need to find the stream somehow. You must provide a StreamName in editor or before this object is Started.
-        public string StreamName = "fake_obci_emg1";
+        public string StreamName = "emg_bin";
         ContinuousResolver resolver;
 
         double max_chunk_duration = 0.2;  // Duration, in seconds, of buffer passed to pull_chunk. This must be > than average frame interval.
