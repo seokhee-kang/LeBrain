@@ -1,8 +1,8 @@
 # Team LeBrain - Neureality 2024
 
-Nikhil Kumar Kuppa
-Srikanth Chandar
-Seokhee Kang
+Nikhil Kumar Kuppa \
+Srikanth Chandar \
+Seokhee Kang \
 Aymeric Degroote
 
 ## Requirements
