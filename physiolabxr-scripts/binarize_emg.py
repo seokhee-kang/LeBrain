@@ -1,5 +1,3 @@
-import numpy as np
-
 from physiolabxr.scripting.RenaScript import RenaScript
 
 
@@ -16,7 +14,6 @@ class emg_script(RenaScript):
         pass
 
     # loop is called <Run Frequency> times per second
-    # 250 Hz?
     def loop(self):
         
         data = self.inputs.get_data('obci_emg')

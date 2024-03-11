@@ -3,7 +3,6 @@ import numpy as np
 from physiolabxr.scripting.RenaScript import RenaScript
 
 import tensorflow as tf
-#from keras.models import load_model
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout
 

@@ -1,11 +1,9 @@
-"""Example program to demonstrate how to send a multi-channel time series to
-LSL."""
-import random
+"""
+Use our recorded data to broadcast an EEG signal into an LSL
+
+"""
 import sys
-import string
-import numpy as np
 import time
-from random import random as rand
 
 from pylsl import StreamInfo, StreamOutlet, local_clock
 

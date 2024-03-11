@@ -1,9 +1,8 @@
-"""Example program to demonstrate how to send a multi-channel time series to
-LSL."""
-import random
+"""
+Produce random data signal into an LSL that has the same format as EEG. Useful for debuging
+
+"""
 import sys
-import string
-import numpy as np
 import time
 from random import random as rand
 
@@ -28,13 +27,12 @@ def main(argv):
         elapsed_time = local_clock() - start_time
         required_samples = int(srate * elapsed_time) - sent_samples
         
-        for sample_ix in range(required_samples):
-            # make a new random n_channels sample; this is converted into a
-            # pylsl.vectorf (the data type that is expected by push_sample)
-           
+        for _ in range(required_samples):
             mysample = [rand()*1 for _ in range(n_channels)]
+            
             # now send it
             outlet.push_sample(mysample)
+        
         sent_samples += required_samples
         # now send it and wait for a bit before trying again.
         time.sleep(0.01)
