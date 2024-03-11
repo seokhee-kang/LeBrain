@@ -17,7 +17,7 @@ public class ActionLSLInput : MonoBehaviour
     double max_chunk_duration = 0.2;  // Duration, in seconds, of buffer passed to pull_chunk. This must be > than average frame interval.
 
     // public float scaleInput = 0.1f;
-    private StreamInlet streamInlet;
+    private StreamInlet inlet;
 
     // StreamInfo[] streamInfos;
     public readonly List<string> weaponsList = new List<string> { "Katana", "Gun", "Rifle" };
@@ -85,14 +85,12 @@ public class ActionLSLInput : MonoBehaviour
                 float newSample = data_buffer[samples_returned - 1, 0];
                 // float channel1 = data_buffer[samples_returned - 1, 1];
                 // float channel2 = data_buffer[samples_returned - 1, 2];
-                foreach (int x in newSample)
-                {
-                    if (this.previousKey == 0 && x == 1)
+                
+                    if (this.previousKey == 0 && newSample == 1)
                     {
                         this.keyJustPressed = true;
                     }
-                this.previousKey = x;
-                }
+                
             }
         }
     }
