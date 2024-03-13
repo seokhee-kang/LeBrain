@@ -42,7 +42,7 @@ Use PhysioLabXR and the Python script `eeg_decoder.py` to produce an LSL with on
 
 ### SSVEP signal
 Use Unicorn to broadcast the EEG signal into an LSL.
-Use PhysioLabXR and the Python script `ssvep_decoder.py` (not in the repository) to produce an LSL with the identified frequency.
+Use PhysioLabXR and the Python script `SSVEP_CCARNN.ipynb` and `ssvep_decoder.py` (not in the repository) to produce an LSL with the identified frequency.
 
 ### Training decoders
 We used MATLAB to acquire the training data and stored it in csv files. We implemented the models in Tensorflow Keras and used Jupyter notebooks for the training process.
