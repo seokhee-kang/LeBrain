@@ -32,7 +32,7 @@ Aymeric Degroote
 Use OpenBCI GUI to acquire the electromyography (EMG) signal, normalize it into values between 0 and 1, and broadcast the data into a Laboratory Stream Layer (LSL).
 Use PhysioLabXR and the Python script `binarize_emg.py` to have an LSL with only one channel taking binary values (binary classification).
 
-- Option 1: Raw signal
+- Option 2: Raw signal
 From the library PhysioLabXR, run `PhysioLabXR_P300Speller_Demo/PhysioLabXRP300SpellerDemoScript.py` to acquire the raw electromyography (EMG) signal straight into a Laboratory Stream Layer (LSL).
 Use PhysioLabXR and the Python script `emg_decoder.py` to have an LSL with only one channel with the decoded classes.
 
